@@ -1,0 +1,227 @@
+object Form1: TForm1
+  Left = 228
+  Height = 315
+  Top = 111
+  Width = 1041
+  Caption = 'Form1'
+  ClientHeight = 315
+  ClientWidth = 1041
+  LCLVersion = '3.6.0.0'
+  object ed_ghindra: TEdit
+    Left = 16
+    Height = 23
+    Top = 180
+    Width = 184
+    TabOrder = 0
+    Text = 'ed_ghindra'
+  end
+  object Label1: TLabel
+    Left = 48
+    Height = 15
+    Top = 164
+    Width = 108
+    Caption = 'HEX Ghindra pointer'
+  end
+  object Label2: TLabel
+    Left = 403
+    Height = 15
+    Top = 164
+    Width = 108
+    Caption = 'HEX X64GDB pointer'
+  end
+  object ed_X64GDB: TEdit
+    Left = 368
+    Height = 23
+    Top = 180
+    Width = 184
+    TabOrder = 1
+    Text = 'ed_X64GDB'
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 15
+    Top = 116
+    Width = 55
+    Caption = 'HEX offset'
+  end
+  object ed_entryPoint: TEdit
+    Left = 88
+    Height = 23
+    Top = 112
+    Width = 184
+    TabOrder = 2
+    Text = 'ed_entryPoint'
+  end
+  object Bt_GtoX: TButton
+    Left = 296
+    Height = 25
+    Top = 180
+    Width = 56
+    Caption = '>>>'
+    TabOrder = 3
+    OnClick = Bt_GtoXClick
+  end
+  object Bt_GX64toG: TButton
+    Left = 216
+    Height = 25
+    Top = 180
+    Width = 56
+    Caption = '<<<'
+    TabOrder = 4
+    OnClick = Bt_GX64toGClick
+  end
+  object ed_ghindra_entryPoint: TEdit
+    Left = 16
+    Height = 23
+    Top = 60
+    Width = 184
+    TabOrder = 5
+    Text = '140206bb8'
+  end
+  object Label4: TLabel
+    Left = 48
+    Height = 15
+    Top = 44
+    Width = 128
+    Caption = 'HEX Ghindra entry point'
+  end
+  object Label5: TLabel
+    Left = 403
+    Height = 15
+    Top = 44
+    Width = 128
+    Caption = 'HEX X64GDB entry point'
+  end
+  object ed_X64GDB_entryPoint: TEdit
+    Left = 368
+    Height = 23
+    Top = 60
+    Width = 184
+    TabOrder = 6
+    Text = '7FF795716BB8'
+  end
+  object Bt_start: TButton
+    Left = 232
+    Height = 25
+    Top = 58
+    Width = 75
+    Caption = 'start'
+    TabOrder = 7
+    OnClick = Bt_startClick
+  end
+  object Label6: TLabel
+    Left = 16
+    Height = 15
+    Top = 91
+    Width = 34
+    Caption = 'Label6'
+  end
+  object Label7: TLabel
+    Left = 368
+    Height = 15
+    Top = 91
+    Width = 34
+    Caption = 'Label7'
+  end
+  object Panel1: TPanel
+    Left = 562
+    Height = 200
+    Top = 40
+    Width = 470
+    ClientHeight = 200
+    ClientWidth = 470
+    TabOrder = 8
+    object Label8: TLabel
+      Left = 1
+      Height = 30
+      Top = 1
+      Width = 468
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'How to'
+      Font.Height = -21
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object StaticText1: TStaticText
+      Left = 1
+      Height = 16
+      Top = 31
+      Width = 468
+      Align = alTop
+      AutoSize = True
+      Caption = '1) find, In the ASM code, the same point in Ghindra and in X64DBG  '
+      TabOrder = 0
+    end
+    object StaticText2: TStaticText
+      Left = 1
+      Height = 16
+      Top = 47
+      Width = 468
+      Align = alTop
+      AutoSize = True
+      Caption = '2) copy the two pointers, in Ghindra and in X64DBG, in the two edit boxes on the left '
+      TabOrder = 1
+    end
+    object StaticText3: TStaticText
+      Left = 1
+      Height = 16
+      Top = 63
+      Width = 468
+      Align = alTop
+      AutoSize = True
+      Caption = '3) press  "start". This initialize the application.'
+      TabOrder = 2
+    end
+    object StaticText4: TStaticText
+      Left = 1
+      Height = 29
+      Top = 79
+      Width = 468
+      Align = alTop
+      Alignment = taCenter
+      AutoSize = True
+      Caption = 'use'
+      Font.Height = -20
+      ParentFont = False
+      TabOrder = 3
+    end
+    object Memo2: TMemo
+      Left = 1
+      Height = 84
+      Top = 108
+      Width = 468
+      Align = alTop
+      Lines.Strings = (
+        '1) Write a pointer in one of the two lower edit boxes '
+        '2) Press one of the buttons ">>" or "<<" to convert the pointer.'
+        ''
+        'The ">>" button overwrite the edit box on the right, and the button "<<" overwrite the edit box on the left.'
+      )
+      TabOrder = 4
+    end
+  end
+  object Label9: TLabel
+    Left = 0
+    Height = 37
+    Top = 0
+    Width = 1041
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'conversion of Ghindra and X64DBG pointers'
+    Font.Height = -27
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Memo1: TMemo
+    Left = 16
+    Height = 88
+    Top = 216
+    Width = 536
+    Lines.Strings = (
+      'Pointers in Ghindra and X64DBG differs by an offset. It''s always possible to evaluate what''s the  Ghindra pointer starting from X64DBG and vice versa, semply adding an offset that remain the same for all pointers in the application. Remember that, if you work with 64bit applications, you have to manage 64bit pointers.'
+      'Pointers of course, are given in their HEX representation.'
+    )
+    TabOrder = 9
+  end
+end
